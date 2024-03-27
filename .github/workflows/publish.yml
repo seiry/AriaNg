@@ -43,4 +43,4 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
-          files: AriaNg-$VERSION.zip
+          files: AriaNg-${{ env.VERSION }}.zip
