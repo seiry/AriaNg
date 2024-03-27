@@ -92,5 +92,16 @@
   "bugs": {
     "url": "https://github.com/mayswind/AriaNg/issues"
   },
-  "homepage": "http://ariang.mayswind.net/"
+  "homepage": "http://ariang.mayswind.net/",
+  "release-it": {
+    "git": {
+      "commitMessage": "chore(release): v${version}"
+    },
+    "github": {
+      "release": true
+    },
+    "npm": {
+      "publish": false
+    }
+  }
 }
