@@ -1,9 +1,9 @@
 /* eslint-disable angular/di */
-const geoMap = new Map();
-const getGeo=(ip)=>{
+var geoMap = new Map();
+var getGeo=(ip)=>{
     try {
         if (geoMap.has(ip)) return geoMap.get(ip);
-        window?.getGeoFromIp(ip).then((geo)=>{
+        getGeoFromIp(ip).then((geo)=>{
             geoMap.set(ip, geo);
         });
 
@@ -413,7 +413,7 @@ const getGeo=(ip)=>{
                 var downstreamFromSpeed = parseInt(peer.downloadSpeed);
                 var completedPieces = getPieceStatus(peer.bitfield, task.numPieces);
                 var completedPieceCount = ariaNgCommonService.countArray(completedPieces, true);
-                const geo = getGeo(peer.ip);
+                var geo = getGeo(peer.ip);
                 peer.name = peer.ip + ':' + peer.port + `(${geo})`;
                 peer.completePercent = completedPieceCount / task.numPieces * 100;
                 peer.downloadSpeed = upstreamToSpeed;
