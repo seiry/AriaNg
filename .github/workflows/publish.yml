@@ -31,9 +31,16 @@ jobs:
       - run: npm run build
 
       - name: Zip the package
-        run: zip -r package.zip ./dist
+        run: zip -r package.zip ./dist/*
+
+      - name: Get version from package.json
+        id: package_version
+        run: echo "::set-output name=VERSION::$(jq -r '.version' package.json)"
+
+      - name: Rename package with version
+        run: mv package.zip package.${{ steps.package_version.outputs.VERSION }}.zip
 
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
-          files: package.zip
+          files: package.${{ steps.package_version.outputs.VERSION }}.zip

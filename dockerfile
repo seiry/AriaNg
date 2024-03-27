@@ -11,11 +11,11 @@ RUN \
     curl && \
     apk add --no-cache \
     && \
-    ANVERSION=$(curl -sX GET "https://api.github.com/repos/mayswind/AriaNg/releases/latest" \
+    ANVERSION=$(curl -sX GET "https://api.github.com/repos/seiry/AriaNg/releases/latest" \
     | jq -r .tag_name ) && \
     curl -o \
     /tmp/AriaNg.zip -L \
-    "https://github.com/mayswind/AriaNg/releases/download/${ANVERSION}/AriaNg-${ANVERSION}.zip" && \
+    "https://github.com/seiry/AriaNg/releases/download/${ANVERSION}/AriaNg-${ANVERSION}.zip" && \
     unzip /tmp/AriaNg.zip -d /ariang && \
     apk del --purge \
     build-dependencies && \
