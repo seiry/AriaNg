@@ -38,9 +38,9 @@ jobs:
         run: echo "::set-output name=VERSION::$(jq -r '.version' package.json)"
 
       - name: Rename package with version
-        run: mv package.zip package.${{ steps.package_version.outputs.VERSION }}.zip
+        run: mv package.zip AriaNg-${{ steps.package_version.outputs.VERSION }}.zip
 
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
-          files: package.${{ steps.package_version.outputs.VERSION }}.zip
+          files: AriaNg-${{ steps.package_version.outputs.VERSION }}.zip
