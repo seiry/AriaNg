@@ -23,7 +23,7 @@ RUN \
     /tmp/*
 
 
-FROM nginx:1.16-alpine as final
+FROM nginx:1.24-alpine as final
 
 COPY --from=downloader /ariang /usr/share/nginx/html
 COPY init.sh /init.sh
