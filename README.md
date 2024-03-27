@@ -1,7 +1,15 @@
 # AriaNg
-[![License](https://img.shields.io/github/license/mayswind/AriaNg.svg?style=flat)](https://github.com/mayswind/AriaNg/blob/master/LICENSE)
-[![Lastest Build](https://img.shields.io/circleci/project/github/mayswind/AriaNg.svg?style=flat)](https://circleci.com/gh/mayswind/AriaNg/tree/master)
-[![Lastest Release](https://img.shields.io/github/release/mayswind/AriaNg.svg?style=flat)](https://github.com/mayswind/AriaNg/releases)
+[![License](https://img.shields.io/github/license/seiry/AriaNg.svg?style=flat)](https://github.com/seiry/AriaNg/blob/master/LICENSE)
+[![Lastest Build](https://img.shields.io/circleci/project/github/seiry/AriaNg.svg?style=flat)](https://circleci.com/gh/seiry/AriaNg/tree/master)
+[![Lastest Release](https://img.shields.io/github/release/seiry/AriaNg.svg?style=flat)](https://github.com/seiry/AriaNg/releases)
+
+## difference
+
+![add country info ](country.png)
+
+add country info to the peer list
+
+with **no** i18n support, for personal use only.
 
 ## Introduction
 AriaNg is a modern web frontend making [aria2](https://github.com/aria2/aria2) easier to use. AriaNg is written in pure html & javascript, thus it does not need any compilers or runtime environment. You can just put AriaNg in your web server and open it in your browser. AriaNg uses responsive layout, and supports any desktop or mobile devices.
@@ -37,7 +45,7 @@ AriaNg is a modern web frontend making [aria2](https://github.com/aria2/aria2) e
 AriaNg now provides three versions, standard version, all-in-one version and [AriaNg Native](https://github.com/mayswind/AriaNg-Native). Standard version is suitable for deployment in the web server, and provides on-demand loading. All-In-One version is suitable for local using, and you can download it and just open the only html file in browser. [AriaNg Native](https://github.com/mayswind/AriaNg-Native) is also suitable for local using, and is no need for browser. 
 
 #### Prebuilt release
-Latest Release: [https://github.com/mayswind/AriaNg/releases](https://github.com/mayswind/AriaNg/releases)
+Latest Release: [https://github.com/seiry/AriaNg/releases](https://github.com/seiry/AriaNg/releases)
 
 Latest Daily Build (Standard Version): [https://github.com/mayswind/AriaNg-DailyBuild/archive/master.zip](https://github.com/mayswind/AriaNg-DailyBuild/archive/master.zip)
 
