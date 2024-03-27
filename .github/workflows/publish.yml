@@ -33,14 +33,14 @@ jobs:
       - name: Zip the package
         run: zip -r package.zip ./dist/*
 
-      - name: Get version from package.json
-        id: package_version
-        run: echo "::set-output name=VERSION::$(jq -r '.version' package.json)"
+
+      - name: Get version from package.json and set as env var
+        run: echo "VERSION=$(jq -r '.version' package.json)" >> $GITHUB_ENV
 
       - name: Rename package with version
-        run: mv package.zip AriaNg-${{ steps.package_version.outputs.VERSION }}.zip
+        run: mv package.zip AriaNg-$VERSION.zip
 
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
-          files: AriaNg-${{ steps.package_version.outputs.VERSION }}.zip
+          files: AriaNg-$VERSION.zip
