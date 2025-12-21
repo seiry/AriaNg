@@ -1,23 +1,25 @@
 /* eslint-disable angular/di */
 var geoMap = new Map();
-function getGeo(ip) {
-    try {
-        if (geoMap.has(ip)) return geoMap.get(ip);
-        // https://www.npmjs.com/package/use-mmdb-vanilla
-        window.getGeoFromIp(ip).then(function (geo) {
-            geoMap.set(ip, geo);
-        });
-
-        return '';
-    } catch (error) {
-        console.error(error);
-    }
-}
 
 (function () {
     'use strict';
 
-    angular.module('ariaNg').factory('aria2TaskService', ['$q', 'bittorrentPeeridService', 'ariaNgConstants', 'aria2Errors', 'aria2RpcService', 'ariaNgCommonService', 'ariaNgLocalizationService', 'ariaNgLogService', 'ariaNgSettingService', function ($q, bittorrentPeeridService, ariaNgConstants, aria2Errors, aria2RpcService, ariaNgCommonService, ariaNgLocalizationService, ariaNgLogService, ariaNgSettingService) {
+    angular.module('ariaNg').factory('aria2TaskService', ['$q', '$window', 'bittorrentPeeridService', 'ariaNgConstants', 'aria2Errors', 'aria2RpcService', 'ariaNgCommonService', 'ariaNgLocalizationService', 'ariaNgLogService', 'ariaNgSettingService', function ($q, $window, bittorrentPeeridService, ariaNgConstants, aria2Errors, aria2RpcService, ariaNgCommonService, ariaNgLocalizationService, ariaNgLogService, ariaNgSettingService) {
+        function getGeo(ip) {
+            try {
+                if (geoMap.has(ip)) return geoMap.get(ip);
+                // https://www.npmjs.com/package/use-mmdb-vanilla
+                if ($window.getGeoFromIp) {
+                    $window.getGeoFromIp(ip).then(function (geo) {
+                        geoMap.set(ip, geo);
+                    });
+                }
+
+                return '';
+            } catch (error) {
+                error(error);
+            }
+        }
         var getFileName = function (file) {
             if (!file) {
                 ariaNgLogService.warn('[aria2TaskService.getFileName] file is null');
