@@ -25,6 +25,58 @@
 ![jsonrpc config ](./images/jsonrpc.png)
 ![zero trust config ](./images/zerotrust.png)
 
+
+#### 一个参考的 docker-compose.yml
+
+```yaml
+services:
+  AriaNg:
+    image: seiry/ariang:latest
+    environment:
+      - ARIA_HOST=download.bj.gov.cn
+      - ARIA_PORT=443
+      - ARIA_PROTOCOL=https
+      - ARIA_SECRET=xjp
+      - ARIA_INTERFACE=jsonrpc
+    network_mode: bridge
+    ports:
+      - 6880:80
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: 1m
+  
+  Aria2-Pro:
+    image: p3terx/aria2-pro
+    cpuset: "0-1"
+    environment:
+      - PUID=0
+      - PGID=0
+      - UMASK_SET=022
+      - RPC_SECRET=xjp
+      - RPC_PORT=6800
+      - LISTEN_PORT=6888
+      - DISK_CACHE=64M
+      - IPV6_MODE=false
+      - UPDATE_TRACKERS=true
+      - CUSTOM_TRACKER_URL=
+      - TZ=Asia/Shanghai
+    volumes:
+      - ~/aria2:/config
+      - ~/download:/downloads
+    network_mode: bridge
+    ports:
+      - 6800:6800
+      - 6888:6888
+      - 6888:6888/udp
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: 1m
+
+```
 ### English
 * add country info to the peer list, you can view the country of each peer friend!
   * (with the lib https://www.npmjs.com/package/use-mmdb-vanilla), which is a monkey patch, for I'm not that familiar with old angular.
