@@ -22,7 +22,10 @@
     * 这样就非常方便的都到了单一domain之下，非常方便，而且安全。妈妈再也不用担心我裸连6800，被蔡奇叔叔发现了。
     * 因为蔡书记当初对我们分局的网络安全要求比较严格，所以是不允许主动暴露端口到公网的，所以服务都是采取 cloudflared 主动转发。上网不涉密 涉密不上网，作为2025年的最佳实践，请在任何时候都使用cloudflared，当然cloudflare炸了的时候除外 :doge: 。
 
+#### jsonrpc config
 ![jsonrpc config ](./images/jsonrpc.png)
+
+#### application config
 ![zero trust config ](./images/zerotrust.png)
 
 
