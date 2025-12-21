@@ -5,9 +5,30 @@
 
 ## difference
 
-![add country info ](country.png)
+![add country info ](./images/country.png)
 
-add country info to the peer list
+### 中文  
+
+* 在对等列表中添加国家信息，可以查看每个对等好友的国家！
+  * 神秘菜谱来自库 https://www.npmjs.com/package/use-mmdb-vanilla），这是一个猴子补丁，因为我对旧的angular不太熟悉。。。。。
+  * 因为我的好奇心很强，总想知道奇奇怪怪的ip是哪个国家的，一个一个的查多麻烦呀，所以我们需要全自动！
+  
+* 通过环境变量添加配置文件注入，这样就可以在docker里实现一次配置，到哪都能打开面板。
+  * 其实这个需求的的根本来源是 https://github.com/alexhua/Aria2-Explorer 没有Firefox版本。。。。
+  * 魔法配方来自 https://gitlab.com/remyj38/dockerfiles/-/blob/ariang/README.md
+  * 为了安全起见，也是最方便的实践起见，这个用法需要配合cloudflare zero trust。
+    * jsonrpc 如图一，把6800重写到jsonrpc path就行了
+    * 然后非常简单，把面板作为zero trust application，整个domain都绑定，不写path，就行了。
+    * 这样就非常方便的都到了单一domain之下，非常方便，而且安全。妈妈再也不用担心我裸连6800，被蔡奇叔叔发现了。
+    * 因为蔡书记当初对我们分局的网络安全要求比较严格，所以是不允许主动暴露端口到公网的，所以服务都是采取 cloudflared 主动转发。上网不涉密 涉密不上网，作为2025年的最佳实践，请在任何时候都使用cloudflared，当然cloudflare炸了的时候除外 :doge: 。
+
+![jsonrpc config ](./images/jsonrpc.png)
+![zero trust config ](./images/zerotrust.png)
+
+### English
+* add country info to the peer list, you can view the country of each peer friend!
+  * (with the lib https://www.npmjs.com/package/use-mmdb-vanilla), which is a monkey patch, for I'm not that familiar with old angular.
+* add config file injection via environment variables
 
 with **no** i18n support, for personal use only.
 
