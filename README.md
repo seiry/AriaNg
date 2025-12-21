@@ -1,6 +1,6 @@
 # AriaNg
 [![License](https://img.shields.io/github/license/seiry/AriaNg.svg?style=flat)](https://github.com/seiry/AriaNg/blob/master/LICENSE)
-[![Lastest Build](https://img.shields.io/circleci/project/github/seiry/AriaNg.svg?style=flat)](https://circleci.com/gh/seiry/AriaNg/tree/master)
+[![Publish](https://github.com/seiry/AriaNg/actions/workflows/publish.yml/badge.svg)](https://github.com/seiry/AriaNg/actions/workflows/publish.yml)
 [![Lastest Release](https://img.shields.io/github/release/seiry/AriaNg.svg?style=flat)](https://github.com/seiry/AriaNg/releases)
 
 ## difference
