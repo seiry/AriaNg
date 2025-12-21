@@ -73,6 +73,23 @@ Everyone is welcome to contribute translations. All translations files are put i
 
 If you want to translate AriaNg to a new language, you can add language configuration to `/src/scripts/config/languages.js`, then copy `/i18n/en.sample.txt` to `/src/langs/` and rename it to the language code to be translated, then you can start the translation work.
 
+Currently available translations:
+
+| Tag | Language | Contributors |
+| --- | --- | --- |
+| cz-CZ | Čeština | [@vorm04](https://github.com/vorm04) |
+| de-DE | Deutsch | [@Malonsow](https://github.com/Malonsow) |
+| en | English | / |
+| es | Español | [@castillofrancodamian](https://github.com/castillofrancodamian) |
+| fr-FR | Français | [@Valaraukar86](https://github.com/Valaraukar86) |
+| it-IT | Italiano | [@ale-saglia](https://github.com/ale-saglia) |
+| pl-PL | Polski | [@Pirania3680](https://github.com/Pirania3680) |
+| ru-RU | Русский | [@gazizovemil](https://github.com/gazizovemil) |
+| zh-Hans | 简体中文 | / |
+| zh-Hant | 繁體中文 | [@zhtw2013](https://github.com/zhtw2013) [@ChiaYen-Kan](https://github.com/ChiaYen-Kan) |
+
+Don't see your language? Help us add it!
+
 ## Documents
 1. [English](http://ariang.mayswind.net)
 2. [Simplified Chinese (简体中文)](http://ariang.mayswind.net/zh_Hans)
