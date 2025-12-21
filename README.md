@@ -108,3 +108,7 @@ docker run -p80:80 -eARIA_HOST=172.17.0.1 -eARIA_PORT=8080 --name ariang -d seir
 ```
 
 https://gitlab.com/remyj38/dockerfiles/-/blob/ariang/README.md
+
+### github merge back link
+
+https://github.com/seiry/AriaNg/compare/master...mayswind:AriaNg:master
