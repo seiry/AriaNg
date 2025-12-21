@@ -1,16 +1,17 @@
 /* eslint-disable angular/di */
 var geoMap = new Map();
 function getGeo(ip) {
-  try {
-    if (geoMap.has(ip)) return geoMap.get(ip);
-    getGeoFromIp(ip).then(function (geo) {
-        geoMap.set(ip, geo);
-    });
+    try {
+        if (geoMap.has(ip)) return geoMap.get(ip);
+        // https://www.npmjs.com/package/use-mmdb-vanilla
+        window.getGeoFromIp(ip).then(function (geo) {
+            geoMap.set(ip, geo);
+        });
 
-    return '';
-  } catch (error) {
-    console.error(error);
-  }
+        return '';
+    } catch (error) {
+        console.error(error);
+    }
 }
 
 (function () {
