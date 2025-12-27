@@ -28,6 +28,10 @@
 #### application config
 ![zero trust config ](./images/zerotrust.png)
 
+#### move up!
+![move up](./images/moveUp.png)
+
+特别需要注意，jsonrpc 的path要在fallback (*) 之前，否则会被catch住，无法访问。当然，其实这俩完全可以分开两个域名，只要不被跨域策略拦截。放在一起主要是统一性美感强迫症。
 
 #### 一个参考的 docker-compose.yml
 
