@@ -9,7 +9,8 @@ services:
       - ARIA_INTERFACE=jsonrpc
     network_mode: bridge
     ports:
-      - 6880:80
+      - 127.0.0.1:6880:80
+      # 这里使用127.0.0.1绑定，保证含有魔法注入菜谱的AriaNg只能用过cloudflare zero trust访问。
     restart: unless-stopped
     logging:
       driver: json-file
