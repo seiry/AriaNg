@@ -1,6 +1,6 @@
 # https://gitlab.com/remyj38/dockerfiles/-/blob/ariang/nginx16-alpine/Dockerfile
 
-FROM alpine as downloader
+FROM alpine AS downloader
 
 LABEL MAINTAINER="Rémy Jacquin <remy@remyj.fr>"
 
@@ -23,7 +23,7 @@ RUN \
     /tmp/*
 
 
-FROM nginx:1.24-alpine as final
+FROM nginx:mainline-alpine AS final
 
 COPY --from=downloader /ariang /usr/share/nginx/html
 COPY init.sh /init.sh
